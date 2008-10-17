@@ -1,0 +1,12 @@
+lib/KiokuDB/Backend/JSPON.pm
+lib/KiokuDB/Backend/Serialize/JSPON.pm
+lib/KiokuDB/Backend/Serialize/JSPON/Collapser.pm
+lib/KiokuDB/Backend/Serialize/JSPON/Expander.pm
+Makefile.PL
+MANIFEST			This list of files
+MANIFEST.SKIP
+notes/std_layout.txt
+t/jspon.t
+t/jspon_backend.t
+META.yml                                 Module meta-data (added by MakeMaker)
+SIGNATURE                                Public-key signature (added by MakeMaker)
