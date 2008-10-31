@@ -15,15 +15,15 @@ use MooseX::Types::Path::Class qw(Dir File);
 
 use namespace::clean -except => 'meta';
 
-our $VERSION = "0.02";
+our $VERSION = "0.03";
 
 with qw(
     KiokuDB::Backend
     KiokuDB::Backend::Serialize::JSPON
-    KiokuDB::Backend::UnicodeSafe
-    KiokuDB::Backend::Clear
-    KiokuDB::Backend::Scan
-    KiokuDB::Backend::Query::Simple::Linear
+    KiokuDB::Backend::Role::UnicodeSafe
+    KiokuDB::Backend::Role::Clear
+    KiokuDB::Backend::Role::Scan
+    KiokuDB::Backend::Role::Query::Simple::Linear
 );
 
 sub BUILD {
@@ -185,13 +185,7 @@ sub insert_entry {
 sub read_entry {
     my ( $self, $id ) = @_;
 
-    my $data = $self->slurp_file($self->object_file($id));
-
-    my %attrs;
-
-    $attrs{root} = 1 if -e $self->root_set_file($id);
-
-    return ( $data, %attrs );
+    $self->slurp_file($self->object_file($id));
 }
 
 sub slurp_file {
