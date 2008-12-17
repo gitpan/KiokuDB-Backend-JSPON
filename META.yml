@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               KiokuDB-Backend-JSPON
-version:            0.03
+version:            0.04
 abstract:           ~
 author:  []
 license:            unknown
@@ -11,7 +11,7 @@ requires:
     File::NFSLock:        0
     IO::AtomicFile:       0
     JSON:                 0
-    KiokuDB:              0.07
+    KiokuDB:              0.09
     Moose:                0
     MooseX::Types::Path::Class:  0
     Path::Class:          0
